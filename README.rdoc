@@ -42,6 +42,8 @@ Implémenter une gestion d’utilisateur avec page d’inscription sur le front 
 --> http://www.sitepoint.com/processing-images-with-carrierwave/
 --> http://www.sitepoint.com/image-processing-rails/
 
+--> CSS : https://www.rubyplus.com/
+
 rails g scaffold User name:string created_at:datetime updated_at:datetime admin:boolean email:string password_digest:string reset_password_key:string
 
 rails g scaffold Article title:string created_at:datetime updated_at:datetime  email:string password_digest:string reset_password_key:string
