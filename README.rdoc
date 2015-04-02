@@ -37,3 +37,14 @@ Implémenter une gestion d’utilisateur avec page d’inscription sur le front 
 	 -  un email ­
 	 -  un mot de passe
 
+# TUTOS 
+
+--> http://www.sitepoint.com/processing-images-with-carrierwave/
+--> http://www.sitepoint.com/image-processing-rails/
+
+rails g scaffold User name:string created_at:datetime updated_at:datetime admin:boolean email:string password_digest:string reset_password_key:string
+
+rails g scaffold Article title:string created_at:datetime updated_at:datetime  email:string password_digest:string reset_password_key:string
+
+
+--> rails g scaffold Article title:string description:text resume:text image:string user_id:integer
