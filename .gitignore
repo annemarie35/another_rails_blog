@@ -13,3 +13,5 @@ dump.rdb
 *.swp
 public/uploads
 
+#exemple de gitignor pour rails : https://github.com/github/gitignore/blob/master/Rails.gitignore
+
