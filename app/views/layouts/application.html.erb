@@ -8,6 +8,29 @@
 </head>
 <body>
 
+<div id="cadre">
+
+  <div id="header">
+
+  <h1>SHARE IT</h1>
+  <h2>Partagez vos plus beaux souvenirs de vacances</h2>
+
+
+  <div id="logo">
+  <%= image_tag("logosimplonred.png", alt: "Logo de Simplon.co", :width => 150) %>
+  </div>
+
+
+<navbar id="navbar">
+<%= link_to "HOME", root_path %> //
+<%= link_to 'Blog', controller: 'articles' %> //
+<br>
+CANDIDATE // <%= link_to "Create your account", new_user_path %> //
+ADMIN // <%= link_to 'Liste des utilisateurs', controller: 'users' %> //
+<%= link_to 'New article', new_article_path %>
+</navbar>
+</div>
+
 <%= yield %>
 
 </body>
