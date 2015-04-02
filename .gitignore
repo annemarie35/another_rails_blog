@@ -1,0 +1,15 @@
+# See  for more about ignoring files : https://help.github.com/articles/ignoring-files
+#
+/log/*
+!/log/.keep
+/tmp
+.env
+
+/.bundle
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/log/*.log
+dump.rdb
+*.swp
+public/uploads
+
