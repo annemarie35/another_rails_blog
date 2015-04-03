@@ -3,9 +3,26 @@
  *= require_self
  */
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+footer { margin-top: 100px; }
+table, td, th { vertical-align: middle !important; border: none !important; }
+th { border-bottom: 1px solid #DDD !important; }
+td.picture { width: 140px; }
+td.picture img { width: 140px; }
+
+
+#logo {
+		font-size: 20px;
+		font-family: &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;
+		float: left;
+		padding: 10px;
+}
+
 body {
-	padding-top: 10px;
-    font-family: "futura-pt";    
+	padding-top: 100px;
+    font-family: "futura-pt";
     line-height: 1.4em;
     text-transform: none;
     letter-spacing: 0px;
@@ -18,7 +35,7 @@ body {
 
 h1 {
     font-size: 20px;
-    text-align: right;
+    text-align: left;
     color: red;
 }
 
@@ -33,7 +50,7 @@ h2 {
     font-size: 14px;
     font-color: #FFFFFF;
     margin-bottom: 10px;
-    /*opacity: .5;*/  
+    /*opacity: .5;*/
     padding: 50px
 }
 
@@ -47,15 +64,9 @@ h2 {
 }
 
 #navbar {
-    
-}
-
-#logo {
 
 }
-
 
 #cadre {
     margin: 50px;
 }
-
