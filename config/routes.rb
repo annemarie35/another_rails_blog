@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   devise_for :admins
+  devise_for :users
+
+  resources :articles
   resources :comments
 
   get 'pages/info'
-
-  devise_for :users
-  resources :articles
+  
   root 'articles#index'
-  get "pages/info"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
