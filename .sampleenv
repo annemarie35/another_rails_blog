@@ -1,1 +1,3 @@
-.dotenv
+DATABASE_PASSWORD=yourpassword
+DATABASE_USER_NAME=youusername
+DATABASE_url=yourdatabaseurl
