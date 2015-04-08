@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  #before_filter :user_is_current_user
+  before_filter :authenticate_user!, :except => [:show, :index]
 
 
   def index
@@ -15,6 +15,8 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    # Access Current User
+    #@things = current_user.things
   end
 
   def create

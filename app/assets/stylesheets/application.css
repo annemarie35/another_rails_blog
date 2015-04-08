@@ -13,15 +13,16 @@ td.picture { width: 140px; }
 td.picture img { width: 140px; }
 
 
-#logo {
+#logo.inline {
 		font-size: 20px;
 		font-family: &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;
-		float: left;
+		float: right;
 		padding: 10px;
 }
 
+
 body {
-	padding-top: 100px;
+	padding-top: 30px;
     font-family: "futura-pt";
     line-height: 1.4em;
     text-transform: none;
