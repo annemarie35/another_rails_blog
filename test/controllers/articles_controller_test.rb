@@ -5,13 +5,18 @@ class ArticlesControllerTest < ActionController::TestCase
     @article = articles(:one)
   end
 
-  test "should get index" do
+  test "0__ARTICLES__should not save article without title" do
+    article = Article.new
+    assert_not article.save
+  end
+
+  test "1___should get index" do
     get :index
     assert_response :success
     assert_not_nil assigns(:articles)
   end
 
-  test "should get new" do
+  test "2___should get new" do
     get :new
     assert_response :success
   end
