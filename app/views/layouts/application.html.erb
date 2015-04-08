@@ -7,14 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/header' %>
-<navbar id="navbar">
-<%= link_to "HOME", root_path %> //
-<br>
-<%= link_to 'New article', new_article_path %>
-</navbar>
-</div>
+<div class="container">
 
+<%= render 'layouts/header' %>
 
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
@@ -22,15 +17,9 @@
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
-
-
-
-<%= render 'layouts/adminmenu' %>
-
-<div class="container">
-  <%= yield %>
-</div>
-
+<%= render 'layouts/menu' %>
+<%= render 'layouts/login_menu' %>
+<%= yield %>
 <%= render 'layouts/footer' %>
 
 </body>
