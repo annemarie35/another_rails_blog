@@ -2,7 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 Bundler.require(*Rails.groups)
-config.assets.initialize_on_precompile = false
+
 
 module Shareit
   class Application < Rails::Application
