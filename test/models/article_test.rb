@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class ArticleTest < ActiveSupport::TestCase
-  test "the truth" do
-   assert true
+  test "0__ARTICLES__should not save article without title" do
+    article = Article.new
+    assert article.invalid?, "title is mandatory"
   end
 end

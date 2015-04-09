@@ -5,11 +5,6 @@ class ArticlesControllerTest < ActionController::TestCase
     @article = articles(:one)
   end
 
-  test "0__ARTICLES__should not save article without title" do
-    article = Article.new
-    assert_not article.save
-  end
-
   test "1___should get index" do
     get :index
     assert_response :success
@@ -17,11 +12,13 @@ class ArticlesControllerTest < ActionController::TestCase
   end
 
   test "2___should get new" do
+    sign_in users(:one)
     get :new
     assert_response :success
   end
 
   test "should create article" do
+    sign_in users(:one)
     assert_difference('Article.count') do
       post :create, article: { description: @article.description, image: @article.image, resume: @article.resume, title: @article.title, user_id: @article.user_id }
     end
@@ -35,16 +32,19 @@ class ArticlesControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
+    sign_in users(:one)
     get :edit, id: @article
     assert_response :success
   end
 
   test "should update article" do
+    sign_in users(:one)
     patch :update, id: @article, article: { description: @article.description, image: @article.image, resume: @article.resume, title: @article.title, user_id: @article.user_id }
     assert_redirected_to article_path(assigns(:article))
   end
 
   test "should destroy article" do
+    sign_in users(:one)
     assert_difference('Article.count', -1) do
       delete :destroy, id: @article
     end
