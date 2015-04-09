@@ -201,6 +201,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mini_magick (= 3.8.0)
+  minitest
   minitest-color
   nested_form
   pg
