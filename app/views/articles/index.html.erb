@@ -23,14 +23,20 @@
         <td><%= article.image %></td>
         <td><%= image_tag article.image_url(:thumb) if article.image? %></td>
         <td><%= article.user_id %></td>
+
+        <% if user_signed_in? -%>
         <td><%= link_to 'Show', article %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end -%>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+
+<%= paginate @articles %>
+<%= page_entries_info @articles %>
 
 <%= link_to 'New Article', new_article_path %>

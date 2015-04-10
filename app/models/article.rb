@@ -4,4 +4,5 @@ class Article < ActiveRecord::Base
   belongs_to :users
 
   validates_presence_of :title
+  validates_presence_of :user_id
 end

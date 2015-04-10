@@ -1,10 +1,12 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, :except => [:show, :index]
+  #before_filter :require_user
 
 
   def index
-    @articles = Article.all
+    @articles = Article.where(user_id:current_user.id)
+    @articles = Article.page(params[:id]).per(10)
   end
 
   def show
@@ -21,14 +23,13 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user_id = current_user_id
 
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
-        format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -37,10 +38,8 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
-        format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -49,7 +48,6 @@ class ArticlesController < ApplicationController
     @article.destroy
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
