@@ -11,7 +11,7 @@
         <% @articles.each do |p| %>
         <li>
             <h3><%= link_to p.title, article_path(p.id) %></h3>
-            <p><small><strong>By:</strong> <%= p.user.email %></small></p>
+            <p><small><strong>By:</strong> <%= p.user_id %></small></p>
             <p><%= p.resume %></p>
             <p><%= image_tag p.image_url(:thumb) if p.image? %></p>
             <% if user_signed_in? -%>

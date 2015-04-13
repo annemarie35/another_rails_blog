@@ -5,6 +5,7 @@ class ArticlesControllerTest < ActionController::TestCase
     @article = articles(:one)
   end
 
+
   test "1___should get index" do
     get :index
     assert_response :success
