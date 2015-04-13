@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 
 
   def index
-    @articles = Article.where(user_id:current_user.id)
+    #@articles = Article.where(user_id:current_user.id)
     @articles = Article.page(params[:id]).per(10)
   end
 
@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.user_id = current_user_id
+    @article.user_id = current_user
 
     respond_to do |format|
       if @article.save
