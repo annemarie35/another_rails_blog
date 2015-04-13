@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
   devise_for :admins
+  devise_for :users, :path_prefix => 'my'
+  resources :users
 
-  devise_for :users
-    scope "/admin" do
-      resources :users
-    end
+  #devise_for :users
+  #  scope "/admin" do
+  #    resources :users
+  #  end
 
+  #resources :users, only: [:index, :show]
   resources :articles
   resources :comments
 
