@@ -18,16 +18,19 @@ class ArticlesController < ApplicationController
 
   def edit
     # Access Current User
-    #@things = current_user.things
+    @articles = current_user.articles
   end
 
   def create
     @article = Article.new(article_params)
-    @article.user_id = current_user
+    #@article.user_id = current_user
+    article_id = current_user.id
 
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        @article.update_attributes!(:user_id => current_user.id)
+        puts "-->#{@article.user_id}<--"
       else
         format.html { render :new }
       end

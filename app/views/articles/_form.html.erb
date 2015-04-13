@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-
+  <%= f.hidden_field :user_id, :value => current_user.id %>
 
   <div class="field">
     <%= f.label :title %><br>
@@ -29,7 +29,6 @@
     <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="actions">
     <%= f.submit %>
   </div>

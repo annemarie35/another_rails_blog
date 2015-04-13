@@ -5,7 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Author</th>
+      <th>Current User's name</th>
+      <th>Author ID</th>
       <th>Title</th>
       <th>Description</th>
       <th>Resume</th>
@@ -19,6 +20,7 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
+        <td><%= current_user.first_name %></td>
         <td><%= article.user_id %></td>
         <td><%= article.title %></td>
         <td><%= article.description %></td>
