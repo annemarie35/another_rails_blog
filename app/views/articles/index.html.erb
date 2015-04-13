@@ -5,12 +5,13 @@
 <table>
   <thead>
     <tr>
+      <th>Author</th>
       <th>Title</th>
       <th>Description</th>
       <th>Resume</th>
       <th>Image Url</th>
       <th>Image</th>
-      <th>User</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,12 +19,13 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
+        <td><%= article.user_id %></td>
         <td><%= article.title %></td>
         <td><%= article.description %></td>
         <td><%= article.resume %></td>
         <td><%= article.image %></td>
         <td><%= image_tag article.image_url(:thumb) if article.image? %></td>
-        <td><%= article.user_id %></td>
+
 
         <% if user_signed_in? -%>
         <td><%= link_to 'Show', article %></td>
