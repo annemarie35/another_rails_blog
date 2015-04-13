@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 
   def index
     #@articles = Article.where(user_id:current_user.id)
-    @articles = Article.page(params[:id]).per(10)
+    @articles = Article.order('created_at DESC').page(params[:page]).per(10)
   end
 
   def show

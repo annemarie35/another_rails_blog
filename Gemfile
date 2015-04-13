@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 
 gem 'nested_form'
 gem 'kaminari'
+gem 'kaminari-bootstrap'
+
+
 gem 'carrierwave'
 gem 'mini_magick', '3.8.0'
 gem 'bootstrap-sass', '3.2.0.0'

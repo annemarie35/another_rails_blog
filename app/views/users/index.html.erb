@@ -13,11 +13,12 @@
             <% end %>
         </div>
         <% end %>
+
     </div>
 </div>
 
 
-<h1>Listing Users</h1>
+<h1>Listing Users, autre mise en forme</h1>
 
 <table>
   <thead>
@@ -43,9 +44,6 @@
   </tbody>
 </table>
 
-<br>
-
-
-
-
-<%= link_to 'New User', new_user_path %>
+<%= paginate(@users) %>
+<%= rel_next_prev_link_tags @users %>
+<%= paginate @users, :views_prefix => '/' %>
