@@ -2,6 +2,8 @@
 
 <h1>Listing Articles</h1>
 
+<% if @articles %>
+
 <div>
     <%= paginate(@articles) %>
     <%= page_entries_info @articles %>
@@ -26,3 +28,9 @@
     </ul>
     <%= paginate(@articles) %>
 </div>
+
+
+<% else %>
+<p><%= puts "Il n'y a pas d'articles à afficher" %><p>
+
+<% end %>

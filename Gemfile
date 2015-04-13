@@ -1,6 +1,5 @@
-source 'https://rubygems.org'
-
-
+source "https://rubygems.org"
+ruby '2.1.3'
 
 gem 'nested_form'
 gem 'kaminari'
