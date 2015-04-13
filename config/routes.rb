@@ -4,16 +4,16 @@ Rails.application.routes.draw do
   devise_for :users, :path_prefix => 'my'
   resources :users
 
-  #devise_for :users
-  #  scope "/admin" do
-  #    resources :users
-  #  end
-
   #resources :users, only: [:index, :show]
   resources :articles
   resources :comments
 
-  root 'welcome#index'
+  root 'articles#index'
+
+  #  #devise_for :users
+    #  scope "/admin" do
+    #    resources :users
+    #  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
