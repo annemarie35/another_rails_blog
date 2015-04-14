@@ -8,5 +8,6 @@ class Article < ActiveRecord::Base
   validates_presence_of :user_id
 
   geocoded_by :adress
-  after_validation :geocode
+  #geocoded_by :adress, :latitude => :lat, :longitude => :lng
+  after_validation :geocode, if: ->(article){ article.adress.present? and article.adress_changed? }
 end
