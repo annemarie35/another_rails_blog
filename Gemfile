@@ -5,6 +5,8 @@ gem 'nested_form'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 
+gem 'gmaps4rails'
+gem 'geocoder'
 
 gem 'carrierwave'
 gem 'mini_magick', '3.8.0'
@@ -25,16 +27,19 @@ gem 'jbuilder', '~> 2.0'
 gem 'unicorn'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'rails_12factor', group: :production
 
-group :test do
+
+group :development, :test do
 	gem 'factory_girl_rails'
+	gem 'fabrication'
 	gem 'minitest-color'
 	gem 'spring'
+	gem 'byebug'
 	gem 'rspec'
 	gem 'rspec-rails'
 	gem 'minitest'
 end
 
-group :development do
+group :production do
+	gem 'rails_12factor'
 end
