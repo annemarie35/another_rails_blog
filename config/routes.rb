@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   #resources :users, only: [:index, :show]
   resources :articles
   resources :comments
+  resources :gmaps
 
   root 'articles#index'
 
