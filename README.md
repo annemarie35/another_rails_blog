@@ -53,9 +53,9 @@ Implémenter une gestion d’utilisateur avec page d’inscription sur le front 
 ## INSTALLATION BDD
 - si vous n'avez pas de base de données installée sur votre ordinateur : voir le readme de https://github.com/simplonco/simplonline/blob/dev/README.md
 - renommer .sampleenv en .env et modifier les données pour vos mots de passe et user
-- Pour lancer le serveur `foreman start web` port 5000
+- Pour lancer le serveur `$ foreman start web` port 5000 ou `$ puma` si ça ne fonctionne pas
 
 # DEPLOYEMENT HEROKU
 
 L'application est en ligne sur Heroku https://a-blog-rails.herokuapp.com/
-( besoin de la commande `heroku run rake db:migrate`voir le tuto en ligne https://devcenter.heroku.com/articles/getting-started-with-rails3)
+( besoin de la commande `$ heroku run rake db:migrate`voir le tuto en ligne https://devcenter.heroku.com/articles/getting-started-with-rails3)
