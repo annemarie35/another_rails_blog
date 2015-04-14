@@ -17,6 +17,12 @@
   <%= @article.resume %>
 </p>
 
+
+<p>
+  <strong>Adress:</strong>
+  <%= @article.adress %>
+</p>
+
 <p>
   <strong>Image:</strong>
   <%= image_tag(@article.image_url, :width => 600) if @article.image.present? %>

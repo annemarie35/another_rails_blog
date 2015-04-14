@@ -7,6 +7,12 @@ class ArticlesController < ApplicationController
   def index
     #@articles = Article.where(user_id:current_user.id)
     @articles = Article.order('created_at DESC').page(params[:page]).per(2)
+    @hash = Gmaps4rails.build_markers(@articles) do |article, marker|
+      marker.lat article.latitude
+      marker.lng article.longitude
+      marker.infowindow "#{article.title} #{article.resume}, #{article.adress}, #{article.user_id}"
+      end
+    #la map ne fonctionne plus depuis que j'ai ajouté ce truc de hash... Voir le modèle aussi
   end
 
   def show
@@ -65,6 +71,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :description, :resume, :image, :user_id)
+      params.require(:article).permit(:title, :description, :resume, :image, :user_id, :adress, :latitude, :longitude)
     end
 end
