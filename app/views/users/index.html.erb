@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <div class="container">
@@ -6,9 +7,10 @@
         <div class="panel panel-default">
             <%= link_to user_path(user) do %>
             <div class="panel-body">
-                <p><%= user.first_name %></p>
-                <p><%= user.last_name %></p>
-                <p><%= user.email %></p>
+                <p>User ID : <%= user.id %></p>
+                <p>First Name : <%= user.first_name %></p>
+                <p>Last Name : <%= user.last_name %></p>
+                <p>E-Mail : <%= user.email %></p>
             </div>
             <% end %>
         </div>
@@ -23,6 +25,7 @@
 <table>
   <thead>
     <tr>
+      <th>User ID</th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Email</th>
@@ -33,6 +36,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.id %></td>
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.email %></td>
@@ -45,5 +49,3 @@
 </table>
 
 <%= paginate(@users) %>
-<%= rel_next_prev_link_tags @users %>
-<%= paginate @users, :views_prefix => '/' %>

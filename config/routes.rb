@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :admins
-  devise_for :users, :path_prefix => 'my'
-  resources :users
+  devise_for :users
+
+  resources :users, only: [:index, :show]
 
   #resources :users, only: [:index, :show]
   resources :articles

@@ -1,7 +1,7 @@
 <div class="row profile">
     <div class="col-sm-4 col-md-3">
-        <%= image_tag(@user.avatar.url(:medium), class: 'avatar') %>
-        <h1><%= @user.full_name %></h1>
+
+        <h1>Détails de l'utilisateur : <%= @user.first_name %>" "<%= @user.last_name %></h1>
         <ul>
           <%= content_tag(:li, ("First Name: " + @user.first_name)) unless @user.first_name.blank? %>
           <%= content_tag(:li, ("Last Name: " + @user.last_name)) unless @user.last_name.blank? %>

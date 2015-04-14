@@ -2,39 +2,27 @@
 
 <h1>Listing Articles</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Resume</th>
-      <th>Image</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.description %></td>
-        <td><%= article.resume %></td>
-        <td><%= article.image %></td>
-        <td><%= image_tag article.image_url(:thumb) if article.image? %></td>
-        <td><%= article.user_id %></td>
-
-        <% if user_signed_in? -%>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end -%>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-
-<%= link_to 'New Article', new_article_path %>
+<div>
+    <%= paginate(@articles) %>
+    <%= page_entries_info @articles %>
+    <ul>
+        <% @articles.each do |p| %>
+        <li>
+            <h3><%= link_to p.title, article_path(p.id) %></h3>
+            <p><small><strong>By:</strong> <%= p.user.email %></small></p>
+            <p><%= p.resume %></p>
+            <p><%= image_tag p.image_url(:thumb) if p.image? %></p>
+            <% if user_signed_in? -%>
+            <table>
+              <tr>
+            <td><%= link_to 'Show // ', p %></td>
+            <td><%= link_to 'Edit // ', edit_article_path(p) %></td>
+            <td><%= link_to ' Destroy', p, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          </table
+            <% end -%>
+        </li>
+        <% end %>
+    </ul>
+    <%= paginate(@articles) %>
+</div>
