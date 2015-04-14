@@ -21,7 +21,7 @@ class ArticlesControllerTest < ActionController::TestCase
   test "should create article" do
     sign_in users(:one)
     assert_difference('Article.count') do
-      post :create, article: { description: @article.description, image: @article.image, resume: @article.resume, title: @article.title, user_id: @article.user_id }
+      post :create, article: { description: @article.description, image: @article.image, resume: @article.resume, title: @article.title, user_id: @article.user_id, adress: @article.adress }
     end
 
     assert_redirected_to article_path(assigns(:article))

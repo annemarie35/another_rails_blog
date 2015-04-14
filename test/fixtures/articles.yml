@@ -5,6 +5,7 @@ one:
   description: MyText
   resume: MyText
   image: MyString
+  adress: adress
   user_id: 1
 
 two:
@@ -12,4 +13,13 @@ two:
   description: MyText
   resume: MyText
   image: MyString
+  adress: adress
+  user_id: 2
+
+three:
+  title: MyString3
+  description: MyText3
+  resume: MyText3
+  image: MyString3
+  adress: adress
   user_id: 2
