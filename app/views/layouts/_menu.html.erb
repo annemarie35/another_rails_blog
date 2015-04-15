@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <% if user_signed_in? %>
-                  <li><%= link_to 'My articles', articles_path %></li>
+                  <li><%= link_to 'My articles', root_path %></li>
                   <li><%= link_to 'Members', users_path %></li>
                   <li><%= link_to 'New Article', new_article_path %></li>
                   <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
@@ -27,7 +27,7 @@
 
                 <% else %>
 
-                  <li><%= link_to 'My articles', articles_path %></li>
+                  <li><%= link_to 'My articles', root_path %></li>
                   <li><%= link_to 'Login', new_user_session_path %></li>
                   <li><%= link_to "Sign up", new_user_registration_path %></li>
                 <% end %>
