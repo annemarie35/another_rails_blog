@@ -1,57 +1,25 @@
 == README
 
 # Objectifs de l'application
-Le système doit se composer de 2 parties :
-­- Le ​back office ​ qui doit permettre d’ajouter/supprimer/éditer des articles ­
--  Le site en tant que tel (ou ​front end ​) qui affiche tous les articles 10 par 10 avec un système de pagination pour en voir les plus anciens
 
-Le design est libre mais nous recommandons d’utiliser Bootstrap ou Foundation pour gagner
-du temps et que le front­end soit responsive.
+C'est un moteur de publications de souvenirs géolocalisés.
+J'aimerais le faire évoluer vers un outil de data journalisme.
+Voir le wiki https://github.com/annemarie35/another_rails_blog/wiki !
 
-## Bonus :
-Implémenter une gestion d’utilisateur avec page d’inscription sur le front et gestion des accès dans le back office
-
-## Architecture :
-­
-### back office :
-­ - page d’authentification ­
- -  page de listing de toutes les articles (avec boutons pour ajouter / modifier / supprimer) ­
- -  page d'édition d’un article ­
- -  (bonus) liste des utilisateurs (avec boutons pour ajouter / modifier / supprimer) ­
- -  (bonus) édition d’un utilisateur
-### front end :
-­ - page unique avec titre du site et 10 derniers articles (sous forme texte + résumé)
- - une page article ­
- -  pagination dans le footer ­
- -  (bonus) une page d’inscription  
-
-## Typologie de données :
-­ Un article est constitué par :
-­  - un titre (256 char max)
- - un résumé ­
- -  un texte ­
- -  une image ­
- -  un auteur (en cas d’appli multi utilisateur) ­
- -  (bonus) Un auteur/utilisateur est constitué par : ­
-	 -  un nom ­
-	 -  un email ­
-	 -  un mot de passe
-
-# TUTOS
-
---> http://www.sitepoint.com/processing-images-with-carrierwave/
---> http://www.sitepoint.com/image-processing-rails/
-
---> CSS : https://www.rubyplus.com/
+# ISSUES
+- Travailler un peu sur le design ( https://www.rubyplus.com/)
+- configurer le mailer
+- configurer les permissions des users et des guests. Il faut peut-être ajouter la gem cancan
+- mettre en place des tests permettant de gérer ces permissions
 
 # INSTALLATION
 
 - Git clone puis `bundle install` pour lancer l'installation des gems nécessaires au projet
 - Lancer la commande `rake test` pour lancer les tests
+- Ne pas oublier de faire un rake db:migrate pour lancer les migrations
 
+- ce projet utilise postgresql, si vous n'avez pas de base de données installée sur votre ordinateur : voir le readme de https://github.com/simplonco/simplonline/blob/dev/README.md
 
-## INSTALLATION BDD
-- si vous n'avez pas de base de données installée sur votre ordinateur : voir le readme de https://github.com/simplonco/simplonline/blob/dev/README.md
 - renommer .sampleenv en .env et modifier les données pour vos mots de passe et user
 - Pour lancer le serveur `$ foreman start web` port 5000 ou `$ puma` si ça ne fonctionne pas
 
