@@ -12,6 +12,8 @@ Voir le wiki https://github.com/annemarie35/another_rails_blog/wiki !
 - configurer les permissions des users et des guests. Il faut peut-être ajouter la gem cancan
 - mettre en place des tests permettant de gérer ces permissions
 
+- ajouter des commentaires --> nested forms
+
 # INSTALLATION
 
 - Git clone puis `bundle install` pour lancer l'installation des gems nécessaires au projet

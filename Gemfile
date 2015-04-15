@@ -31,12 +31,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
 	gem 'factory_girl_rails'
-	gem 'fabrication'
 	gem 'minitest-color'
 	gem 'spring'
 	gem 'byebug'
-	gem 'rspec'
-	gem 'rspec-rails'
 	gem 'minitest'
 end
 
