@@ -8,6 +8,8 @@ gem 'kaminari-bootstrap'
 gem 'gmaps4rails'
 gem 'geocoder'
 
+gem 'openstreetmap', :git => 'git://github.com/sozialhelden/openstreetmap'
+
 gem 'carrierwave'
 gem 'mini_magick', '3.8.0'
 gem 'bootstrap-sass', '3.2.0.0'
@@ -35,6 +37,7 @@ group :development, :test do
 	gem 'spring'
 	gem 'byebug'
 	gem 'minitest'
+	gem 'dotenv-rails'
 end
 
 group :production do
